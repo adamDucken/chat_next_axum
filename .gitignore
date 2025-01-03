@@ -1,0 +1,34 @@
+# Ignore for Rust (chat_axum)
+chat_axum/target/
+chat_axum/Cargo.lock
+
+# Ignore for Node.js (chat_next)
+chat_next/node_modules/
+chat_next/.next/
+chat_next/.turbo/
+chat_next/pnpm-lock.yaml
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore logs
+**/npm-debug.log*
+**/yarn-debug.log*
+**/yarn-error.log*
+**/pnpm-debug.log*
+
+# Ignore environment files
+**/.env
+**/.env.local
+**/.env.development
+**/.env.test
+**/.env.production
+
+# Ignore editor or IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.tmp
+
