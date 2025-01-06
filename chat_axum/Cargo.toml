@@ -5,11 +5,21 @@ edition = "2021"
 
 [dependencies]
 axum = {version= "0.8.0", features = ["ws"] }
+axum-extra = {version = "0.10.0", features = ["typed-header"] }
 futures = "0.3"
-serde = "1.0.217"
+jsonwebtoken = "9.3.0"
+serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0.134"
 thiserror = "2.0.9"
 tokio = { version = "1", features = ["full"] }
 tracing = "0.1"
 tracing-subscriber = { version = "0.3", features = ["env-filter"] }
 uuid = "1.11.0"
+sqlx = { version = "0.7", features = ["runtime-tokio", "postgres", "time"] }
+argon2 = "0.5"
+anyhow = "1.0.95"
+dotenvy = "0.15.7"
+http = "1.2.0"
+tower-http = { version = "0.5", features = ["cors","fs"] }
+time = "0.3.37"
+tower-cookies = "0.11.0"
