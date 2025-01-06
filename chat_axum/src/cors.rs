@@ -1,11 +1,18 @@
-use http::header::{AUTHORIZATION, CONTENT_TYPE};
+use http::header::{ACCESS_CONTROL_ALLOW_CREDENTIALS, AUTHORIZATION, CONTENT_TYPE};
+use http::HeaderValue;
 use http::Method;
-use tower_http::cors::{Any, CorsLayer};
+use tower_http::cors::CorsLayer;
 
 pub fn create_cors_layer() -> CorsLayer {
-    // (Any) this is only for dev env ;; in prod you shold change this to explicit values - TODO
+    let origin = HeaderValue::from_static("http://localhost:3000");
+
     CorsLayer::new()
-        .allow_origin(Any)
+        .allow_origin(origin)
         .allow_methods([Method::GET, Method::POST, Method::PUT, Method::DELETE])
-        .allow_headers([CONTENT_TYPE, AUTHORIZATION])
+        .allow_credentials(true)
+        .allow_headers([
+            CONTENT_TYPE,
+            AUTHORIZATION,
+            ACCESS_CONTROL_ALLOW_CREDENTIALS,
+        ])
 }
