@@ -4,7 +4,11 @@ import Link from 'next/link';
 export default function HomePage() {
   return (
     <div className="container mx-auto p-4">
-      <h1>Home Page</h1>
+      <div>
+        <Link href="/">
+          Home Page
+        </Link>
+      </div>
       <div>
         <Link href="/register">
           Register
@@ -15,6 +19,12 @@ export default function HomePage() {
           Login
         </Link>
       </div>
+      <div>
+        <Link href="/chat">
+          Chat
+        </Link>
+      </div>
+
     </div>
   );
 }
