@@ -70,12 +70,14 @@ pub struct DbAuth {
     pool: PgPool,
 }
 
+// check handler
 pub async fn check(claims: Claims) -> Result<String, AuthError> {
     Ok(format!(
         "Welcome to the protected area :)\nYour data:\n{claims}",
     ))
 }
 
+// authorize handler
 pub async fn authorize(
     State(db_auth): State<DbAuth>,
     Json(payload): Json<User>,
@@ -116,6 +118,7 @@ pub async fn authorize(
     ))
 }
 
+// register handler
 pub async fn register(
     State(db_auth): State<DbAuth>,
     Json(payload): Json<User>,
